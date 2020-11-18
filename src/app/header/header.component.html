@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e75353;">
+    <div class="container">
+        <a *ngIf="auth.isAuthenticated() && checkAdmin()" routerLink="/" 
+        class="navbar-brand" routerLinkActive="active">Admin Portal</a>
+        <a *ngIf="auth.isAuthenticated() && !checkAdmin()"
+        routerLink="/" class="navbar-brand" routerLinkActive="active">User Portal</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <ng-container *ngIf="!auth.isAuthenticated()">
+                    <li class="nav-item">
+                        <a routerLink="/auth/login" class="nav-link" routerLinkActive="active">
+                            Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/auth/register" class="nav-link">
+                            Register
+                        </a>
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="auth.isAuthenticated() && checkAdmin()">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/product-retrieve']">Manage Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/user-retrieve']">Manage Users</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link">
+                            {{ auth.getUsername() }}
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link pointer" (click)="logout()">
+                            Logout
+                        </a>
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="auth.isAuthenticated() && !checkAdmin()">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/shop']">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/cart']">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pointer" (click)="logout()">
+                            Logout
+                        </a>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</nav>

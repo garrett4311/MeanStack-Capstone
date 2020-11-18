@@ -1,0 +1,8 @@
+<div>
+    <h2>Delete User</h2>
+    <label>Username</label>
+    <input type="text" #userName>
+    <input type="button" value="Delete User" (click)="deleteUserByName(userName.value)">
+    <br>
+    {{result}}
+</div>

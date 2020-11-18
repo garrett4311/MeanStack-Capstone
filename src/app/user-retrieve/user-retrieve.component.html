@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>Username</th>
+                    <th>User Type</th>
+                    <th>Email</th>
+                </tr>
+                <tr *ngFor="let user of users">
+                    <td>{{user.username}}</td>
+                    <td>{{user.userType}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row-4">
+            <button type="button" class="nav-link btn btn-danger" [routerLink]="['/user-delete']">Delete Users</button>
+        </div>
+        <hr>
+        <div class="row-4">
+            <button type="button" class="nav-link btn btn-success" [routerLink]="['/user-add']">Add Users</button>
+        </div>
+        <hr>
+        <div class="row-4">
+            <button type="button" class="nav-link btn btn-primary" [routerLink]="['/user-update']">Update Users</button>
+        </div>
+    </div>
+</div>

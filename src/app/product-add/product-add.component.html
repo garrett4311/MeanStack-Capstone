@@ -1,0 +1,21 @@
+<div>
+    <form [formGroup]="productRef" (ngSubmit)="addProduct()">
+        <label>Product ID</label>
+        <input type="text" formControlName="_id"><br>
+        <label>Product Name</label>
+        <input type="text" formControlName="name"><br>
+        <label>Product Image URL</label>
+        <input type="text" formControlName="image"><br>
+        <label>Product Type</label>
+        <select formControlName="type">
+            <option>Hoodie</option>
+            <option>Jersey</option>
+            <option>Shirt</option>
+            <option>Hat</option>
+        </select><br>
+        <label>Price</label>
+        <input type="text" formControlName="price"><br>
+        <input type="submit" value="Add Product">
+    </form>
+    {{result}}
+</div>

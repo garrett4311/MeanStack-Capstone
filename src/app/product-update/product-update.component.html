@@ -1,0 +1,24 @@
+<div>
+    <h1>Update a Product</h1>
+    <form [formGroup]="productRef" (ngSubmit)="updateProduct()">
+        <h3>Type the ID of the product you would like to update.</h3>
+        <label>Product ID</label>
+        <input type="text" formControlName="_id"><br>
+        <hr>
+        <label>New Product Name</label>
+        <input type="text" formControlName="name"><br>
+        <label>New Product Image URL</label>
+        <input type="text" formControlName="image"><br>
+        <label>New Product Type</label>
+        <select formControlName="type">
+            <option>Hoodie</option>
+            <option>Jersey</option>
+            <option>Shirt</option>
+            <option>Hat</option>
+        </select><br>
+        <label>New Price</label>
+        <input type="text" formControlName="price"><br>
+        <input type="submit" value="Update Product">
+    </form>
+    {{result}}
+</div>

@@ -1,0 +1,22 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div class="row card-group">
+    <div class="col-md-4" *ngFor="let product of products; let i = index" style="width: 18rem">
+        <div class="card">
+            <img class="card-img-top" src="{{product.image}}"
+             width="250" height="425" alt="Product Image">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <h5 class="card-title">${{product.price}}</h5>
+                <button type="button" class="btn btn-primary"
+                (click)="addToCart(i)">Buy Now</button>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+<div>
+    <button type="button" class="btn btn-success" [routerLink]="['/cart']">Check Out</button>
+</div>

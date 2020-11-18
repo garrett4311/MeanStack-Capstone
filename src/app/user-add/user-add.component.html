@@ -1,0 +1,17 @@
+<div>
+    <form [formGroup]="userRef" (ngSubmit)="addUser()">
+        <label>Username</label>
+        <input type="text" formControlName="username"><br>
+        <label>User Type</label>
+        <select formControlName="userType">
+            <option>Admin</option>
+            <option>User</option>
+        </select><br>
+        <label>Email</label>
+        <input type="email" formControlName="email"><br>
+        <label>Password</label>
+        <input type="text" formControlName="password"><br>
+        <input type="submit" value="Add User">
+    </form>
+    {{result}}
+</div>

@@ -1,0 +1,8 @@
+<div>
+    <h2>Delete Product</h2>
+    <label>ID</label>
+    <input type="text" #prodId>
+    <input type="button" value="Delete Product" (click)="deleteProductById(prodId.value)">
+    <br>
+    {{result}}
+</div>

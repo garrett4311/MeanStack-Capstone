@@ -1,0 +1,20 @@
+<div>
+    <h1>Update a User</h1>
+    <form [formGroup]="userRef" (ngSubmit)="updateUserDetails()">
+        <h3>Choose user to update by typing their username:</h3>
+        <label>Username</label>
+        <input type="text" formControlName="username"><br>
+        <hr>
+        <label>New User Type</label>
+        <select formControlName="userType">
+            <option>Admin</option>
+            <option>User</option>
+        </select><br>
+        <label>New Email</label>
+        <input type="email" formControlName="email"><br>
+        <label>New Password</label>
+        <input type="text" formControlName="password"><br>
+        <input type="submit" value="Update User">
+    </form>
+    {{result}}
+</div>

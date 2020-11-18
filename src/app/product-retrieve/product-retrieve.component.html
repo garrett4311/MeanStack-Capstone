@@ -1,0 +1,41 @@
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Image</th>
+                        <th scope="col">Product Type</th>
+                        <th scope="col">Product Price</th>
+                    </tr>
+                    <tr *ngFor="let product of products">
+                        <td>{{product._id}}</td>
+                        <td>{{product.name}}</td>
+                        <!-- <td>{{product.image}}</td> -->
+                        <td>
+                            <img src="{{product.image}}" width="250" height="250">
+                        </td>
+                        <td>{{product.type}}</td>
+                        <td>${{product.price}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row-4">
+                <button type="button" class="nav-link btn btn-danger" [routerLink]="['/product-delete']">Delete Products</button>
+            </div>
+            <hr>
+            <div class="row-4">
+                <button type="button" class="nav-link btn btn-success" [routerLink]="['/product-add']">Add Products</button>
+            </div>
+            <hr>
+            <div class="row-4">
+                <button type="button" class="nav-link btn btn-primary" [routerLink]="['/product-update']">Update Products</button>
+            </div>
+        </div>
+    </div>
+
+
